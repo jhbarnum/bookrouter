@@ -81,10 +81,10 @@ class Bookmarks extends Component {
                 placeholder="link (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.artist && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Song
               </FormBtn>
             </form>
           </Col>

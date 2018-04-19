@@ -1,25 +1,25 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import React from "react";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Bookmarks from "./pages/Bookmarks";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+// import Bookmarks from "./pages/Bookmarks";
+// import Detail from "./pages/Detail";
+// import NoMatch from "./pages/NoMatch";
+// import Nav from "./components/Nav";
 
-const App = () => (
-  <Router>
+// const App = () => (
+//   <Router>
     
-      <div>
-        <Nav />
-        <Switch>
-        <Route exact path="/" component={Bookmarks} />
-        <Route path="/bookmarks/:id" component={Detail} />
-        <Route component={NoMatch} />
+//       <div>
+//         <Nav />
+//         <Switch>
+//         <Route exact path="/" component={Bookmarks} />
+//         <Route path="/bookmarks/:id" component={Detail} />
+//         <Route component={NoMatch} />
         
-        </Switch>
+//         </Switch>
       
-      </div>
-  </Router>
-);
+//       </div>
+//   </Router>
+// );
 
-export default App;
+// export default App;
