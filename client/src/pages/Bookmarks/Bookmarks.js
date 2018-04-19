@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
+import Panel from "../../components/Panel";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -57,10 +58,13 @@ class Bookmarks extends Component {
     return (
       <Container fluid>
         <Row>
+          <Col size="md-12">
+            <Jumbotron><h1>Find your Groove</h1></Jumbotron>
+          </Col>
           <Col size="md-6">
-            <Jumbotron>
-              <h1>For the Record?</h1>
-            </Jumbotron>
+            <Panel>
+              <h4>For the Record?</h4>
+            </Panel>
             <form>
               <Input
                 value={this.state.title}
@@ -84,14 +88,14 @@ class Bookmarks extends Component {
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>On the Record</h1>
-            </Jumbotron>
+            <Panel>
+              <h4>On the Record</h4>
+            </Panel>
             {this.state.bookmarks.length ? (
               <List>
                 {this.state.bookmarks.map(bookmark => (
@@ -106,7 +110,7 @@ class Bookmarks extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>No Results Empty</h3>
             )}
           </Col>
         </Row>
