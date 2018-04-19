@@ -1,8 +1,8 @@
-import React from 'react';
+// import React from 'react';
 
-const LandingPage = () =>
-    <div>
-        <h1>Landing Page</h1>
-    </div>
+// const LandingPage = () =>
+//     <div>
+//         <h1>Landing Page</h1>
+//     </div>
 
-export default LandingPage;
+// export default LandingPage;

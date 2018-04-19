@@ -88,11 +88,7 @@ class Bookmarks extends Component {
                 disabled={!(this.state.artist && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-<<<<<<< HEAD
                 Submit Song
-=======
-                Submit
->>>>>>> 64a443cdeb934d2cb89cb22b42a0b37946bba7cb
               </FormBtn>
             </form>
           </Col>

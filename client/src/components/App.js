@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import Navigation from './Navigation';
-import LandingPage from './Landing';
+//import LandingPage from './Landing';
 import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
@@ -43,10 +43,10 @@ render() {
 
       <hr />
 
-      <Route
+      {/* <Route
         exact path={routes.LANDING}
         component={() => <LandingPage />}
-      />
+      /> */}
       <Route
         exact path={routes.SIGN_UP}
         component={() => <SignUpPage />}

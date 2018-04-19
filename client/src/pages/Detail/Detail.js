@@ -84,11 +84,7 @@ loadAPI = () => {
         </Row>
         <Row>
           <Col size="md-2">
-<<<<<<< HEAD
-            <Link to="/">← Back to Songs</Link>
-=======
             <Link to="/">← Back to Artists</Link>
->>>>>>> 64a443cdeb934d2cb89cb22b42a0b37946bba7cb
           </Col>
         </Row>
       </Container>
