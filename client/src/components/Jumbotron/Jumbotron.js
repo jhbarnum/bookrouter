@@ -2,7 +2,8 @@ import React from "react";
 
 const Jumbotron = ({ children }) => (
   <div
-    style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
+    style={{ backgroundImage: "carbonf.png", height: 200, clear: "both", paddingTop: 50, textAlign: "center" }}
+ 
     className="jumbotron"
   >
     {children}
