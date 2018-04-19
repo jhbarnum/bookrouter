@@ -11,7 +11,7 @@ import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 //import HomePage from './Home';
 import HomePage from '../pages/Bookmarks';
-import AccountPage from '../pages/Detail';
+import Detail from '../pages/Detail';
 
 import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
@@ -64,8 +64,10 @@ render() {
         component={() => <HomePage />}
       />
       <Route
-        exact path={routes.ACCOUNT}
-        component={() => <AccountPage />}
+        path="/bookmarks/:id"
+        //path={routes.ACCOUNT}
+        //component={() => <AccountPage />}
+        component={Detail}
       />
     </div>
   </Router>

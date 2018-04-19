@@ -14,6 +14,38 @@ class Detail extends Component {
 
   componentDidMount() {
     this.loadDetails();
+    this.loadAPI();
+  }
+loadAPI = () => {
+    //////////////////////////////////////////////////////////////////////
+    // npm youtube-search API tool
+    var search = require('youtube-search');
+
+
+    var opts = {
+      maxResults: 10,
+      key: 'AIzaSyBE7pmW9Pc60kwAB4f7UK12QTI8svWwV7Q'
+    };
+    var searchTopic = "Weezer, Sweater Song";
+
+    search(searchTopic, opts, function (err, results) {
+      if (err) return console.log(err);
+
+      var resultId = results[0].id;
+      var resultLink = results[0].link;
+      var resultTitle = results[0].title;
+      var resultPic = results[0].thumbnails.default.url;
+      console.dir(results[0].id);
+      console.dir(results[0].link);
+      console.dir(results[0].title);
+      console.dir(results[0].thumbnails.default.url);
+
+
+
+    });
+////////////////////////////////////////////////////////////////////////
+
+
   }
 
   loadDetails = () => {
