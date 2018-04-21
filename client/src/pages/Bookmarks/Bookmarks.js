@@ -161,19 +161,19 @@ loadAPI = () => {
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Title"
               />
               <Input
                 value={this.state.artist}
                 onChange={this.handleInputChange}
                 name="artist"
-                placeholder="artist (required)"
+                placeholder="artist"
               />
               <TextArea
                 value={this.state.link}
                 onChange={this.handleInputChange}
                 name="link"
-                placeholder="link (Optional)"
+                placeholder="Search Topic"
               />
               <FormBtn
                 disabled={!(this.state.artist && this.state.title)}
