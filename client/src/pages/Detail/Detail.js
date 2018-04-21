@@ -83,7 +83,7 @@ loadAPI = () => {
           <Col size="md-10 md-offset-1">
             <Panel>
               <h1>Details</h1>
-              <p><a href="{this.state.bookmark.link}"> {this.state.bookmark.link}</a></p>
+              <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p>
             </Panel>
           </Col>
         </Row>
