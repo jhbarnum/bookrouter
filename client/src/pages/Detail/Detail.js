@@ -4,6 +4,8 @@ import { Col, Row, Container } from "../../components/Grid";
 //import Jumbotron from "../../components/Jumbotron";
 import Panel from "../../components/Panel";
 import API from "../../utils/API";
+//import Hyperlink from 'react-native-hyperlink';
+
 
 class Detail extends Component {
   state = {
@@ -16,6 +18,7 @@ class Detail extends Component {
   componentDidMount() {
     this.loadDetails();
     this.loadAPI();
+    console.log(this.state.bookmark.artist + "this.props.match.params.id");
   }
 loadAPI = () => {
     //////////////////////////////////////////////////////////////////////
@@ -27,8 +30,9 @@ loadAPI = () => {
       maxResults: 10,
       key: 'AIzaSyBE7pmW9Pc60kwAB4f7UK12QTI8svWwV7Q'
     };
-    var searchTopic = "Weezer, Sweater Song";
-
+  var searchTopic = this.props.match.params.id;
+  
+    //var searchTopic = "Weezer, Sweater Song";
     search(searchTopic, opts, function (err, results) {
       if (err) return console.log(err);
 
@@ -52,8 +56,8 @@ loadAPI = () => {
   loadDetails = () => {
     
     API.getBookmark(this.props.match.params.id)
+  
       .then(res =>
-        
         this.setState({ bookmark: res.data })
         
       )
@@ -78,7 +82,7 @@ loadAPI = () => {
           <Col size="md-10 md-offset-1">
             <article>
               <h1>Details</h1>
-              <p><a href="{this.state.bookmark.link}"> {this.state.bookmark.link}</a></p>
+              <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p>
             </article>
           </Col>
         </Row>
