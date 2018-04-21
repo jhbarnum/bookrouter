@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import Panel from "./Panel";
 
 import { SignUpLink } from './SignUp';
 import { auth } from '../firebase';
@@ -7,9 +8,12 @@ import * as routes from '../constants/routes';
 
 const SignInPage = ({ history }) =>
     <div>
-        <h1>SignIn</h1>
-        <SignInForm history={history} />
-        <SignUpLink />
+        <Panel>
+            <h1>Sign In</h1>
+            <SignInForm history={history} />
+        
+            <SignUpLink />
+        </Panel>
     </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -63,25 +67,29 @@ class SignInForm extends Component {
             email === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    value={email}
-                    onChange={event => this.setState(byPropKey('email', event.target.value))}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <input
-                    value={password}
-                    onChange={event => this.setState(byPropKey('password', event.target.value))}
-                    type="password"
-                    placeholder="Password"
-                />
-                <button disabled={isInvalid} type="submit">
-                    Sign In
-        </button>
+            <form className="form-horizontal">
+     
 
-                {error && <p>{error.message}</p>}
-            </form>
+                <form onSubmit={this.onSubmit}>
+                    <input
+                        value={email}
+                        onChange={event => this.setState(byPropKey('email', event.target.value))}
+                        type="text" style={{color: "black"}}
+                        placeholder="Email Address"
+                    />
+                    <input
+                        value={password}
+                        onChange={event => this.setState(byPropKey('password', event.target.value))}
+                        type="password" style={{ color: "black" }}
+                        placeholder="Password"
+                    />
+                    <button disabled={isInvalid} type="submit" class="btn btn-primary" >
+                        Sign In
+                    </button>  
+
+                    {error && <p>{error.message}</p>}
+                </form>
+           </form>
         );
     }
 }

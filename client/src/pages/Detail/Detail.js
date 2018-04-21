@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-//import Jumbotron from "../../components/Jumbotron";
+import Jumbotron from "../../components/Jumbotron";
 import Panel from "../../components/Panel";
+import Pager from "../../components/Pager";
 import API from "../../utils/API";
 
 class Detail extends Component {
@@ -61,30 +62,32 @@ loadAPI = () => {
   };
   
 
-// Jumbotron => Panel
+// Jumbotron => Panel => revert back to Jumbotron & Panel is now replacing article
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Panel>
+            <Jumbotron>
               <h1>
                 {this.state.bookmark.title} by {this.state.bookmark.artist}
               </h1>
-            </Panel>
+            </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
-            <article>
+            <Panel>
               <h1>Details</h1>
               <p><a href="{this.state.bookmark.link}"> {this.state.bookmark.link}</a></p>
-            </article>
+            </Panel>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Artists</Link>
+            <Pager>
+              <Link to="/">← Back to Artists</Link>
+            </Pager>
           </Col>
         </Row>
       </Container>
