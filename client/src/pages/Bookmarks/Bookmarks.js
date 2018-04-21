@@ -13,13 +13,53 @@ class Bookmarks extends Component {
     bookmarks: [],
     title: "",
     artist: "",
-    link: ""
+    link: "",
+    youtubelink: ""
   };
+
 
   componentDidMount() {
     this.loadBookmarks();
   }
 
+loadAPI = () => {
+    //////////////////////////////////////////////////////////////////////
+    // npm youtube-search API tool
+    // var search = require('youtube-search');
+    // // this.setState({ link: this.state.link });
+
+    // var opts = {
+    //   maxResults: 10,
+    //   key: 'AIzaSyBE7pmW9Pc60kwAB4f7UK12QTI8svWwV7Q'
+    // };
+
+    // var searchTopic = this.state.link;
+    // var me = this;
+
+    // //var searchTopic = "Weezer, Sweater Song";
+    // search(searchTopic, opts, function (err, results) {
+    //   if (err) return console.log(err);
+      
+      
+    //   var link = results[0].link;
+    //   var resultTitle = results[0].title;
+    //   var resultPic = results[0].thumbnails.default.url;
+    //   console.log("##############" + results[0].id);
+    //   console.dir(results[0].link);
+    //   console.dir(results[0].title);
+    //   console.dir(results[0].thumbnails.default.url);
+    //   me.setState({ link: results[0].link });
+    //   me.setState({ youtubelink: results[0].link });
+      
+
+    // });
+}
+////////////////////////////////////////////////////////////////////////
+
+ 
+
+
+  
   loadBookmarks = () => {
     API.getBookmarks()
       .then(res =>
@@ -39,19 +79,70 @@ class Bookmarks extends Component {
     this.setState({
       [name]: value
     });
+    
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.artist) {
-      API.saveBookmark({
-        title: this.state.title,
-        artist: this.state.artist,
-        link: this.state.link
-      })
-        .then(res => this.loadBookmarks())
-        .catch(err => console.log(err));
-    }
+    //this.loadAPI();
+    //console.log(this.loadAPI)
+    var search = require('youtube-search');
+    // this.setState({ link: this.state.link });
+
+    var opts = {
+      maxResults: 10,
+      key: 'AIzaSyBE7pmW9Pc60kwAB4f7UK12QTI8svWwV7Q'
+    };
+
+    var searchTopic = this.state.link;
+    var me = this;
+
+    //var searchTopic = "Weezer, Sweater Song";
+    search(searchTopic, opts, function (err, results) {
+      if (err) return console.log(err);
+
+
+      var link = results[0].link;
+      var resultTitle = results[0].title;
+      var resultPic = results[0].thumbnails.default.url;
+      console.log("##############" + results[0].id);
+      console.dir(results[0].link);
+      console.dir(results[0].title);
+      console.dir(results[0].thumbnails.default.url);
+      me.setState({ link: results[0].link });
+      me.setState({ youtubelink: results[0].link });
+      if (me.state.title && me.state.artist) {
+        console.log(me.state.link)
+        console.log(me.state.youtubelink)
+
+        API.saveBookmark({
+          title: me.state.title,
+          artist: me.state.artist,
+          link: me.state.link,
+          youtubelink: results[0].link
+        })
+          .then(res => me.loadBookmarks())
+          .catch(err => console.log(err));
+      }
+
+    });
+
+
+    // if (this.state.title && this.state.artist) {
+    //   console.log(this.state.link)
+    //   console.log(this.state.youtubelink)
+
+    //   API.saveBookmark({
+    //     title: this.state.title,
+    //     artist: this.state.artist,
+    //     link: this.state.link,
+    //     youtubelink: results[0].link
+    //   })
+    //     .then(res => this.loadBookmarks())
+    //     .catch(err => console.log(err));
+    // }
+    
+
   };
 
   render() {

@@ -14,7 +14,7 @@ const SignOutButton = () =>
 //        type="a"
         onClick={auth.doSignOut}
     >
-        <a>Sign Out</a>
+        <p>Sign Out</p>
   </a>
 
 

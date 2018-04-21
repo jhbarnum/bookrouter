@@ -18,41 +18,41 @@ class Detail extends Component {
 
   componentDidMount() {
     this.loadDetails();
-    this.loadAPI();
+    //this.loadAPI();
     console.log(this.state.bookmark.artist + "this.props.match.params.id");
   }
-loadAPI = () => {
-    //////////////////////////////////////////////////////////////////////
-    // npm youtube-search API tool
-    var search = require('youtube-search');
+// loadAPI = () => {
+//     //////////////////////////////////////////////////////////////////////
+//     // npm youtube-search API tool
+//     var search = require('youtube-search');
 
 
-    var opts = {
-      maxResults: 10,
-      key: 'AIzaSyBE7pmW9Pc60kwAB4f7UK12QTI8svWwV7Q'
-    };
-  var searchTopic = this.props.match.params.id;
+//     var opts = {
+//       maxResults: 10,
+//       key: 'AIzaSyBE7pmW9Pc60kwAB4f7UK12QTI8svWwV7Q'
+//     };
+//   var searchTopic = this.props.match.params.id;
   
-    //var searchTopic = "Weezer, Sweater Song";
-    search(searchTopic, opts, function (err, results) {
-      if (err) return console.log(err);
+//     //var searchTopic = "Weezer, Sweater Song";
+//     search(searchTopic, opts, function (err, results) {
+//       if (err) return console.log(err);
 
-      var resultId = results[0].id;
-      var resultLink = results[0].link;
-      var resultTitle = results[0].title;
-      var resultPic = results[0].thumbnails.default.url;
-      console.dir(results[0].id);
-      console.dir(results[0].link);
-      console.dir(results[0].title);
-      console.dir(results[0].thumbnails.default.url);
-
-
-
-    });
-////////////////////////////////////////////////////////////////////////
+//       var resultId = results[0].id;
+//       var resultLink = results[0].link;
+//       var resultTitle = results[0].title;
+//       var resultPic = results[0].thumbnails.default.url;
+//       console.log("##############" + results[0].id);
+//       console.dir(results[0].link);
+//       console.dir(results[0].title);
+//       console.dir(results[0].thumbnails.default.url);
 
 
-  }
+
+//     });
+// ////////////////////////////////////////////////////////////////////////
+
+
+//   }
 
   loadDetails = () => {
     
@@ -62,7 +62,7 @@ loadAPI = () => {
         this.setState({ bookmark: res.data })
         
       )
-      .catch(err => console.log(err));
+      .catch(err => console.log( err));
   };
   
 
