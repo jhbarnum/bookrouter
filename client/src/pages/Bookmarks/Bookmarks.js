@@ -63,7 +63,7 @@ loadAPI = () => {
   loadBookmarks = () => {
     API.getBookmarks()
       .then(res =>
-        this.setState({ bookmarks: res.data, title: "", artist: "", link: "" })
+        this.setState({ bookmarks: res.data, title: "", artist: "", link: "" ,youtubelink: ""})
       )
       .catch(err => console.log(err));
   };
@@ -124,7 +124,7 @@ loadAPI = () => {
           .then(res => me.loadBookmarks())
           .catch(err => console.log(err));
       }
-
+      
     });
 
 

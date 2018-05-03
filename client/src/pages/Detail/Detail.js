@@ -19,7 +19,7 @@ class Detail extends Component {
   componentDidMount() {
     this.loadDetails();
     //this.loadAPI();
-    console.log(this.state.bookmark.artist + "this.props.match.params.id");
+    //console.log(this.state.bookmark.artist + "this.props.match.params.id");
   }
 // loadAPI = () => {
 //     //////////////////////////////////////////////////////////////////////
@@ -63,6 +63,7 @@ class Detail extends Component {
         
       )
       .catch(err => console.log( err));
+      console.log(this.state.bookmark.youtubelink)
   };
   
 
@@ -83,6 +84,7 @@ class Detail extends Component {
           <Col size="md-10 md-offset-1">
             <Panel>
               <h1>Details</h1>
+              {/* <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p> */}
               <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p>
             </Panel>
           </Col>
