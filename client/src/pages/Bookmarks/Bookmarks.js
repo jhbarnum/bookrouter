@@ -109,6 +109,7 @@ loadAPI = () => {
       console.dir(results[0].link);
       console.dir(results[0].title);
       console.dir(results[0].thumbnails.default.url);
+      console.log(results)
       me.setState({ link: results[0].link });
       me.setState({ youtubelink: results[0].link });
       if (me.state.title && me.state.artist) {

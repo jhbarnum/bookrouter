@@ -86,6 +86,10 @@ class Detail extends Component {
               <h1>Details</h1>
               {/* <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p> */}
               <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p>
+              <iframe width="560" height="315"
+                src={this.state.bookmark.link}
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+              </iframe>
             </Panel>
           </Col>
         </Row>
@@ -104,7 +108,7 @@ class Detail extends Component {
 export default Detail;
 
 
-<iframe width="560" height="315" 
+{/* <iframe width="560" height="315" 
 src="https://www.youtube.com/embed/2-afjrhl6ko" 
 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+</iframe> */}
