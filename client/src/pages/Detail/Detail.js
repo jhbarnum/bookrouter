@@ -90,6 +90,8 @@ class Detail extends Component {
                 src={this.state.bookmark.link}
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
               </iframe>
+              <p>{this.state.bookmark.link}</p>
+              
             </Panel>
           </Col>
         </Row>
