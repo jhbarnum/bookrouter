@@ -101,17 +101,18 @@ loadAPI = () => {
     search(searchTopic, opts, function (err, results) {
       if (err) return console.log(err);
 
-
-      var link = results[0].link;
+      var link = "https://www.youtube.com/embed/" + results[0].id;
+      // var link = results[0].link;
       var resultTitle = results[0].title;
       var resultPic = results[0].thumbnails.default.url;
-      console.log("##############" + results[0].id);
+      console.log("##############" + results[0].id);///////////////////////////////////
       console.dir(results[0].link);
       console.dir(results[0].title);
       console.dir(results[0].thumbnails.default.url);
+      console.log(link + "kkkkkkkk")
       console.log(results)
-      me.setState({ link: results[0].link });
-      me.setState({ youtubelink: results[0].link });
+      me.setState({ link: results[0].id });
+      //me.setState({ youtubelink: results[0].youtubelink });
       if (me.state.title && me.state.artist) {
         console.log(me.state.link)
         console.log(me.state.youtubelink)
@@ -119,7 +120,8 @@ loadAPI = () => {
         API.saveBookmark({
           title: me.state.title,
           artist: me.state.artist,
-          link: me.state.link,
+          link: link,
+          // link: me.state.link,
           youtubelink: results[0].link
         })
           .then(res => me.loadBookmarks())

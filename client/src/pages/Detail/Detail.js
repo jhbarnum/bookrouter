@@ -15,11 +15,12 @@ class Detail extends Component {
   // Add code to get the book with an _id equal to the id in the route param
   // e.g. http://localhost:3000/books/:id
   // The book id for this route can be accessed using this.props.match.params.id
-
+  
   componentDidMount() {
     this.loadDetails();
     //this.loadAPI();
     //console.log(this.state.bookmark.artist + "this.props.match.params.id");
+    
   }
 // loadAPI = () => {
 //     //////////////////////////////////////////////////////////////////////
@@ -63,7 +64,9 @@ class Detail extends Component {
         
       )
       .catch(err => console.log( err));
-      console.log(this.state.bookmark.youtubelink)
+      //console.log(this.state.bookmark.youtubelink)
+
+    
   };
   
 
@@ -84,13 +87,14 @@ class Detail extends Component {
           <Col size="md-10 md-offset-1">
             <Panel>
               <h1>Details</h1>
-              {/* <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p> */}
-              <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p>
-              <iframe width="560" height="315"
+              <iframe width="420" height="315" src={this.state.bookmark.link} frameborder="0" allowfullscreen></iframe>
+              {/* \
+              <p><a href={this.state.bookmark.link}> {this.state.bookmark.link}</a></p> */}
+              {/* <iframe width="560" height="315"
                 src={this.state.bookmark.link}
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-              </iframe>
-              <p>{this.state.bookmark.link}</p>
+              </iframe> */}
+              
               
             </Panel>
           </Col>
