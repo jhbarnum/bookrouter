@@ -42,9 +42,14 @@ class Detail extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>
+              <p>
+                <h1>
+                <img src={this.state.bookmark.image} alt="Pic" width="105" height="78"  ></img>
+              
                 {this.state.bookmark.title} by {this.state.bookmark.artist} 
               </h1>
+              
+              </p>
             </Jumbotron>
           </Col>
         </Row>
@@ -53,7 +58,7 @@ class Detail extends Component {
             <Panel>
               <h1>Details</h1>
               <iframe width="420" height="315" src={this.state.bookmark.link} frameborder="0" allowfullscreen></iframe>
-              <img width="420" height="315" src={this.state.bookmark.image} ></img>
+              
           
               
               

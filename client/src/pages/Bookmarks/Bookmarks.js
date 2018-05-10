@@ -14,7 +14,8 @@ class Bookmarks extends Component {
     title: "",
     artist: "",
     link: "",
-    youtubelink: ""
+    youtubelink: "",
+    image: ""
   };
 
 
