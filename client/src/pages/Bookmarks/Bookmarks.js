@@ -29,7 +29,7 @@ class Bookmarks extends Component {
   loadBookmarks = () => {
     API.getBookmarks()
       .then(res =>
-        this.setState({ bookmarks: res.data, title: "", artist: "", link: "" ,youtubelink: ""})
+        this.setState({ bookmarks: res.data, title: "", artist: "", link: "" ,youtubelink: "", image: ""})
       )
       .catch(err => console.log(err));
   };
@@ -62,19 +62,15 @@ class Bookmarks extends Component {
     //var searchTopic = this.state.link;
     var me = this;
 
-    //var searchTopic = "Weezer, Sweater Song";
     search(searchTopic, opts, function (err, results) {
       if (err) return console.log(err);
 
       var link = "https://www.youtube.com/embed/" + results[0].id;
-      // var link = results[0].link;
+     
       var resultTitle = results[0].title;
       var resultPic = results[0].thumbnails.default.url;
       console.log("##############" + results[0].id);///////////////////////////////////
-      console.dir(results[0].link);
-      console.dir(results[0].title);
       console.dir(results[0].thumbnails.default.url);
-      console.log(link + "kkkkkkkk")
       console.log(results)
       me.setState({ link: results[0].id });
       //me.setState({ youtubelink: results[0].youtubelink });
@@ -87,7 +83,8 @@ class Bookmarks extends Component {
           artist: me.state.artist,
           link: link,
           // link: me.state.link,
-          youtubelink: results[0].link
+          youtubelink: results[0].link, 
+          image: results[0].thumbnails.default.url
         })
           .then(res => me.loadBookmarks())
           .catch(err => console.log(err));
@@ -106,7 +103,7 @@ class Bookmarks extends Component {
           <Col size="md-12">
             <Jumbotron><h1>Find your Groove</h1></Jumbotron>
           </Col>
-          <Col size="md-6">
+          <Col size="md-12">
             <Panel>
               <h4>For the Record?</h4>
             </Panel>
@@ -137,7 +134,7 @@ class Bookmarks extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
+          <Col size="md-12 sm-12">
             <Panel>
               <h4>On the Record</h4>
             </Panel>
