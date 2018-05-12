@@ -70,14 +70,12 @@ class Bookmarks extends Component {
      
       var resultTitle = results[0].title;
       var resultPic = results[0].thumbnails.default.url;
-      console.log("##############" + results[0].id);///////////////////////////////////
-      console.dir(results[0].thumbnails.default.url);
-      console.log(results)
+      console.log(results[0])
       me.setState({ link: results[0].id });
       //me.setState({ youtubelink: results[0].youtubelink });
       if (me.state.title && me.state.artist) {
-        // console.log(me.state.link)
-        // console.log(me.state.youtubelink)
+         console.log(me.state.link)
+         console.log(me.state.youtubelink)
 
         API.saveBookmark({
           title: me.state.title,
