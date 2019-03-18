@@ -1,3 +1,13 @@
+
+# start mongo
+## Open two terminal windows, run 'mongo' and 'mongod'
+## node server.js start
+## nom start
+
+
+
+
+
 # Create React Express App
 
 ## About This Boilerplate
